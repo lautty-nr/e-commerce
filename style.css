@@ -1,0 +1,85 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #faf8f4;
+}
+
+.hero-image {
+  height: 300px;
+  background-image: url('img/bahia-bonita.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.product-card {
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.menu-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 50;
+}
+
+.menu-dropdown.show {
+  display: block;
+}
+
+.hours-dropdown {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.hours-dropdown.show {
+  max-height: 500px;
+}
+
+.search-container {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 300px;
+  display: none;
+  z-index: 50;
+}
+
+.search-container.show {
+  display: block;
+}
+
+/* Cargando animacion */
+.loading-spinner {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: #fff;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Ocultar secciones no visibles en la vista actual */
+.page-content:not(.active) {
+  display: none;
+}
